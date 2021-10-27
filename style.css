@@ -226,15 +226,16 @@ aside {
 
 /* slider */
 .slider::-webkit-slider-thumb {
-/*   -webkit-appearance: none;
-  appearance: none; */
+  -webkit-appearance: none;
+  appearance: none;
   width: 15px;
   height: 15px;
-  border-radius: 50%;
-	border-width: 1.7px;
-	border-color: white;
-
 	background: black;
+  border-radius: 50%;
+border-width: 1.7px;
+border-color: white;
+
+	
 
   cursor: pointer;
 }
