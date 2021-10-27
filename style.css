@@ -1,0 +1,411 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+:root {
+	--Cwidth: 35vw;
+}
+
+@font-face {
+
+
+	font-family: 'Bitter';
+	src: url('fonts/Bitter-VariableFont_wght.ttf') format('truetype-variations');
+	/* font-stretch: 75% 100%;
+	font-style: oblique 0deg 12deg; */
+	font-weight: 100 900;
+
+	font-family: 'Bitter italic';
+	src: url('fonts/Bitter-Italic-VariableFont_wght.ttf') format('truetype-variations');
+	/* font-stretch: 75% 100%;
+	font-style: oblique 0deg 12deg; */
+	font-weight: 100 900;
+
+}
+
+@font-face {
+	font-family: 'Blinker';
+	src: url('fonts/Blinker_variable.ttf') format('truetype-variations');
+	font-weight: 100 800;
+}
+
+@font-face {
+	font-family: 'Hepta';
+	src: url('fonts/HeptaSlab-VariableFont_wght.ttf') format('truetype-variations');
+	font-weight: 1 900;
+}
+
+
+
+body,html {
+  height: 100%;
+	/* transform: translate(0%, 0); */
+		overflow: hidden;
+}
+
+main {
+  display: block;
+  width: 100%;
+  height: 100%;
+	font-family: 'Bitter';
+  font-weight: 400;
+	background-color: white;
+}
+
+.onload {
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	z-index: 4;
+	position: relative;
+	opacity: 1;
+
+	transition: opacity 0.3s;
+	transition-timing-function: ease-out;
+}
+
+.introText{
+	width: 55vw;
+	margin: auto;
+	text-align: center;
+	position: relative;
+	top: 47vh;
+
+	font-size: 22px;
+	line-height: 1.3em;
+	color: white;
+}
+
+.privacy {
+  font-family: 'Hepta';
+  font-size: 50px;
+
+  text-align: center;
+  position: fixed;
+	top: 28vh;
+
+	width: 100vw;
+  color: white;
+  background: none;
+
+	z-index: 1;
+	animation: dynamicFont 4s ease-out 0s infinite alternate;
+
+}
+
+@keyframes dynamicFont {
+	from {font-weight: 100;}
+	to {font-weight: 900;}
+}
+
+.tp {
+  font-family: 'Bitter';
+	font-size: 17px;
+	font-weight: 450;
+	opacity: 0.7;
+
+	display: inline-block;
+	position: fixed;
+
+	transform: translate(-50px, -5px);
+}
+
+.tp2 {
+  font-family: 'Bitter';
+	font-size: 17px;
+	font-weight: 450;
+	opacity: 0.7;
+	z-index: 2;
+	color: red;
+}
+
+.blue {
+	width: 15px;
+	height: 15px;
+	background-color: blue;
+}
+
+@keyframes flicker {
+	0% {color: white;}
+	100% {color: black;}
+}
+
+strong {
+	font-weight: 700;
+
+	animation-name: flicker;
+	animation-duration: .8s;
+	animation-direction: alternate-reverse;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+aside {
+	font-family: 'Archivo', sans-serif;
+	font-size: 17px;
+	font-weight: 400;
+
+
+	z-index: 3;
+	position: fixed;
+	bottom: 0;
+	/* transform: translate(20%, 0); */
+
+	width: 100vw;
+	height: 40vh;
+
+	background-color: black;
+	color: white;
+	opacity: 0.95;
+}
+
+/* .showHandle{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+	background-color: white;
+	width: 45px;
+	height: 15px;
+
+	border: 5px solid white;
+	border-radius: 0 0 5px 5px;
+} */
+
+.showHandle:hover{
+	 cursor: pointer;
+}
+
+.controls {
+	margin-top: 30px;
+
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.controlcontainer {
+	width: var(--Cwidth);
+
+	margin-bottom: 2em;
+	/* margin-right: 5px;
+	margin-left: 5px; */
+
+
+	/* position: relative;
+	left: 3em;
+	top: 2em; */
+/*
+	margin-right: 6em;
+	margin-bottom: 15px; */
+}
+
+.controlcontainer:nth-of-type(1), .controlcontainer:nth-of-type(3) {
+	margin-right: 20px;
+}
+.controlcontainer:nth-of-type(2), .controlcontainer:nth-of-type(4) {
+	margin-left: 20px;
+}
+
+.controls>div>p {
+	margin-bottom: 10px; */
+}
+
+/* container */
+.slider {
+  -webkit-appearance: none;
+  width: var(--Cwidth);
+  height: 1.5px;
+  border-radius: 5px;
+  background: white;
+  outline: none;
+	opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+/* slider */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+		background: black;
+  border-radius: 50%;
+	border: 1.8px solid white;
+  cursor: pointer;
+}
+
+/* handle */
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+	background: black;
+  border-radius: 50%;
+	border: 1.8px solid white;
+  cursor: pointer;
+}
+
+.infos{
+	color: white;
+	font-size: 12px;
+	position: relative;
+	top: -10px;
+	margin-left: 20px;
+
+
+}
+
+.credits {
+	margin-bottom: 5px;
+	opacity: 0.8;
+}
+
+.plusCredits {
+	margin-left: -5px;
+	display: none;
+
+}
+
+.plus {
+		padding: 10px;
+		opacity: 0.5;
+		transition: transform .4s ease-in-out, opacity .4s ease-in;
+		position: relative;
+		top: -2px;
+}
+
+.plus:hover {
+		transform: rotate(180deg);
+		opacity: 0.8;
+}
+
+.plus:hover + .plusCredits {
+	display: inline-block;
+}
+
+.harmed {
+		margin-left: 10px;
+
+}
+
+.number {
+	opacity: 0.7;
+}
+
+.number:hover {
+
+	transition: opacity 0.5s;
+
+}
+
+.number2 {
+	display: none;
+	margin-left: 5px;
+}
+
+.number:hover + .number2 {
+	display: inline-block;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+	:root {
+		--Cwidth: 12vw;
+	}
+
+	.introText {
+		position: relative;
+		top: 47vh;
+	}
+
+.privacy {
+	  font-size: 150px;
+		top: 38vh;
+		left: -8vw;
+}
+
+	aside {
+			position: fixed;
+			right: 0;
+
+			width: 16vw;
+			height: 100vh;
+
+	}
+
+	.controlcontainer:nth-of-type(1), .controlcontainer:nth-of-type(3) {
+		margin-right: 0px;
+	}
+	.controlcontainer:nth-of-type(2), .controlcontainer:nth-of-type(4) {
+		margin-left: 0px;
+	}
+
+	.controls {
+		margin-top: 30px;
+
+		align-content: center;
+		flex-direction: column;
+
+
+
+	}
+
+
+
+}
